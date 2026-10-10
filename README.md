@@ -66,3 +66,35 @@ The project includes a `noindex` meta tag, a `robots.txt` file, and `_headers` w
 ## Before a commerce launch
 
 Confirm product availability, descriptions, prices, measurements and materials, consumer terms (delivery, returns), the contact email, functional enquiry processing / payment arrangements and privacy / cookie compliance. The current prototype is not a live online shop.
+
+
+## Analytics setup — staged rollout
+
+### Phase 1: Cloudflare Web Analytics (basic visits)
+
+1. Cloudflare Dashboard → Workers & Pages → `horodetska-boho` → **Metrics**.
+2. Press **Enable** on Web Analytics.
+3. Cloudflare adds its pageview beacon to the next Pages deployment. Do **not** paste the snippet into the code as well.
+4. Review Analytics & Logs → Web Analytics. Cloudflare Web Analytics currently does not support custom click events or UTM parameters.
+
+### Phase 2: Google Analytics 4 (collection interactions)
+
+1. Create a Google Analytics account/property and a **Web data stream** using `https://horodetska-boho.pages.dev`.
+2. Copy the **Measurement ID**, which looks like `G-XXXXXXXXXX`. Never share a Google account password, API secret or service-account private key.
+3. After the privacy notice is reviewed, update `GA4_MEASUREMENT_ID` at the start of `assets/js/app.js` from the empty string to the real ID.
+4. Publish to `main`. The site will show a mobile-friendly **Accept analytics / Reject** consent panel. **Google's script loads only after acceptance**; users can change their choice via the footer.
+5. Use GA4 Realtime / DebugView to confirm `page_view`, `view_item` and `select_item` after consent. A visitor rejecting optional analytics will not load GA4.
+
+Tracked events (no names, emails, countries entered in forms, or free-text are transmitted through custom events):
+
+| Event | Meaning |
+|---|---|
+| `page_view` | Consent-based page view, sent by GA4 |
+| `view_item` | Visit to a single look page (`HB-01` etc.) |
+| `select_item` | Open a look from Collections |
+| `hb_click` | Click a tagged navigation/CTA link |
+| `hb_enquiry_intent` | Click “Enquire about this look” — **not a lead** |
+| `hb_copy_inquiry` | Successful copying of draft inquiry text — **not a submitted lead** |
+| `hb_filter` | Filter selected within Collections |
+
+The current form does **not** send a request to the atelier, so **do not** configure `generate_lead` or `purchase` as key events based on these clicks. Genuine lead/purchase measurement requires a working submission/booking/payment workflow and confirmed status.
