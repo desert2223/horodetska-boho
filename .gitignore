@@ -1,0 +1,17 @@
+# Operating systems and editors
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+# Python/cache
+__pycache__/
+*.py[cod]
+.pytest_cache/
+# Local credentials and private data
+.env
+.env.*
+!.env.example
+secrets/
+# Local build archives and downloads
+*.zip
+*.log
