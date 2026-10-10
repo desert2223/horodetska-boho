@@ -1,0 +1,145 @@
+[
+  {
+    "id": "01",
+    "title": "Burgundy embroidered look",
+    "category": "Editorial / Look",
+    "filter": "editorial",
+    "photos": [
+      1
+    ],
+    "description": "Burgundy silhouette with vibrant handcrafted ornament.",
+    "status": "UNCONFIRMED"
+  },
+  {
+    "id": "02",
+    "title": "Olive & gold look",
+    "category": "Editorial / Look",
+    "filter": "editorial",
+    "photos": [
+      2
+    ],
+    "description": "Soft olive tones and vivid embroidered sleeve details.",
+    "status": "UNCONFIRMED"
+  },
+  {
+    "id": "03",
+    "title": "Black & white folk look",
+    "category": "Editorial / Look",
+    "filter": "editorial",
+    "photos": [
+      3
+    ],
+    "description": "A contrast-led look with embroidered details.",
+    "status": "UNCONFIRMED"
+  },
+  {
+    "id": "04",
+    "title": "Charcoal sculptural look",
+    "category": "Editorial / Look",
+    "filter": "editorial",
+    "photos": [
+      4
+    ],
+    "description": "A pared-back dark textile silhouette.",
+    "status": "UNCONFIRMED"
+  },
+  {
+    "id": "05",
+    "title": "Silver-grey lace ensemble",
+    "category": "Layered looks",
+    "filter": "layers",
+    "photos": [
+      5,
+      7,
+      11
+    ],
+    "description": "Flowing grey layers, white lace, and floral embroidered cuffs.",
+    "status": "UNCONFIRMED"
+  },
+  {
+    "id": "06",
+    "title": "Cobalt gathered dress",
+    "category": "Dresses",
+    "filter": "dresses",
+    "photos": [
+      8,
+      33,
+      34
+    ],
+    "description": "A vivid blue dress with gathered hem and floral embroidered sleeves.",
+    "status": "UNCONFIRMED"
+  },
+  {
+    "id": "07",
+    "title": "White embroidered silhouette",
+    "category": "Dresses",
+    "filter": "dresses",
+    "photos": [
+      10,
+      13,
+      18
+    ],
+    "description": "Airy white textiles and decorative embroidery. Image pairing to be confirmed.",
+    "status": "UNCONFIRMED"
+  },
+  {
+    "id": "08",
+    "title": "Soft pink embroidered layer",
+    "category": "Layered looks",
+    "filter": "layers",
+    "photos": [
+      14,
+      24
+    ],
+    "description": "A rose-coloured long outer layer with embroidery over white.",
+    "status": "UNCONFIRMED"
+  },
+  {
+    "id": "09",
+    "title": "Royal-blue embroidered coat",
+    "category": "Layered looks",
+    "filter": "layers",
+    "photos": [
+      12,
+      15,
+      17
+    ],
+    "description": "A bold blue statement layer with floral cuffs.",
+    "status": "UNCONFIRMED"
+  },
+  {
+    "id": "10",
+    "title": "Black dramatic ensemble",
+    "category": "Editorial / Look",
+    "filter": "editorial",
+    "photos": [
+      16
+    ],
+    "description": "Dark layered look with vivid handcrafted accessories.",
+    "status": "UNCONFIRMED"
+  },
+  {
+    "id": "11",
+    "title": "Red embroidered outerwear",
+    "category": "Layered looks",
+    "filter": "layers",
+    "photos": [
+      23,
+      25
+    ],
+    "description": "Bright red embroidered outer layer shown in two poses.",
+    "status": "UNCONFIRMED"
+  },
+  {
+    "id": "12",
+    "title": "Turquoise & ivory layers",
+    "category": "Layered looks",
+    "filter": "layers",
+    "photos": [
+      28,
+      32
+    ],
+    "description": "Cool turquoise and light-layered looks; grouping to be confirmed.",
+    "status": "UNCONFIRMED"
+  }
+]
