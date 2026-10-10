@@ -190,4 +190,8 @@
   }
 
   setupConsentUi();
+  const localeScript = document.createElement('script');
+  localeScript.src = '/assets/js/i18n.js';
+  localeScript.defer = true;
+  document.head.appendChild(localeScript);
 })();
