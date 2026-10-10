@@ -2,7 +2,7 @@
 (() => {
   // Set this only after a GA4 web data stream is created and the privacy notice is reviewed.
   // No Google tag or consent banner is loaded while this is empty.
-  const GA4_MEASUREMENT_ID = '';
+  const GA4_MEASUREMENT_ID = 'G-4E79QDVLTV';
 
   const toggle = document.querySelector('.mobile-toggle');
   const menu = document.querySelector('#mobileMenu');
