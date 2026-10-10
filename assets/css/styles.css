@@ -107,3 +107,12 @@
   transform:none;
 }
 .nav-link.nav-cta:focus-visible {outline:2px solid var(--ink);outline-offset:3px;}
+
+/* Enquiries: consistent hover colors with the other navigation buttons, without layout shift. */
+.nav-link.nav-cta:hover,
+.nav-link.nav-cta:focus-visible {
+  background:var(--ink);
+  color:var(--white);
+  border-color:var(--ink);
+  transform:none;
+}
