@@ -1,75 +1,68 @@
-# Horodetska Boho — editorial showroom (v2)
+# Horodetska Boho — Editorial Showroom v2
 
-A **private, not-yet-approved** static preview of an independent designer atelier site. The source includes a homepage, collections preview, 12 editorial look pages, archive, story, atelier, runway & press, FAQ and contact page.
+Static editorial fashion website for designer Svitlana Horodetska. The project includes a homepage, collections preview, 12 editorial look pages, archive, Our Story, Atelier, Runway & Press, FAQ, and Contact.
 
-**This is not an active shop.** Availability, prices, sizes, fabric compositions and sold status are not verified. The enquiry form copies a draft message; it **does not send** email, store inquiries, or accept payments. Visitor analytics are **not** connected.
+## Current status
 
-## Project structure
+- **GitHub repository:** public, `main` branch.
+- **Photography:** user-approved images for this site; 34 optimized photographs are included.
+- **Deployment:** Cloudflare Pages Git integration is the planned hosting approach. **Not yet connected by this repository.**
+- **Site:** design / catalogue preview, not an active ecommerce storefront.
+- **Catalogue data:** prices, stock status, sizes, fabrics and historical sold status await final confirmation.
+- **Enquiries:** the form prepares a message for the visitor to copy to Instagram; it does not send email or accept payments.
+- **Analytics:** not yet installed. Tracking handlers in `assets/js/app.js` do not send events until an analytics setup and consent flow are configured.
 
-- `index.html` — homepage, portrait of the designer.
-- `collections/`, `looks/`, `archive/` — editorial lookbook.
-- `our-story/`, `atelier/`, `runway-press/` — brand presentation.
-- `faq/`, `contact/` — customer information / enquiry prototype.
-- `assets/css/styles.css` — layout and editorial look.
-- `assets/js/app.js` — interactive menu, category filters and form text preparation.
-- `assets/img/` — optimized retouched photographs (not generative redesigns).
-- `data/looks.json`, `data/photo_inventory.csv` — draft grouping and content review.
-- `EDITORIAL_NOTES_UK.md` — required confirmations before public launch.
-- `build.py`, `build_v2.py` — development scripts used to generate site pages. They require Python with Jinja2 and may overwrite HTML / CSS / README; keep a git commit before using them. **No build step is required for deployment.**
+## Files
 
-## Preview locally
+- `index.html` — homepage with the designer portrait.
+- `collections/` and `looks/` — photo catalogue and look pages.
+- `archive/` — photo archive; no unverified sold claims.
+- `our-story/`, `atelier/`, `runway-press/` — editorial pages.
+- `faq/` and `contact/` — informational pages.
+- `assets/` — shared CSS/JavaScript, optimized photography and favicon.
+- `data/` — look grouping and photo inventory for future curation.
+- `EDITORIAL_NOTES_UK.md` — missing business information and content to confirm.
+- `scripts/check_site.py` — local links and assets check.
 
-In the project folder run:
+## Run locally
+
+Run from the repository root:
 
 ```bash
 python -m http.server 8080
 ```
 
-Open http://localhost:8080 — opening HTML directly from disk is not supported because asset routes are root-relative.
+Then open http://localhost:8080 . Root-relative asset paths mean opening individual HTML files directly from disk is not the intended preview method.
 
-Check all local asset links:
+## Validate
 
 ```bash
 python scripts/check_site.py
 ```
 
-## Version control (private repository)
+GitHub Actions also runs the check after pushes to `main` and pull requests.
 
-1. In GitHub, create a new **Private** empty repository named `horodetska-boho` in the `desert2223` account. **Do not** generate a README, license or .gitignore: they are included here.
-2. Put the **contents of this folder** in the repository root (so `index.html` is directly in the repo root, not inside a nested folder).
-3. With Git installed, from the extracted project folder:
+## Deploy to Cloudflare Pages
 
-```bash
-git init -b main
-git add .
-git commit -m "Initial Horodetska Boho editorial preview v2"
-git remote add origin https://github.com/desert2223/horodetska-boho.git
-git push -u origin main
-```
+In Cloudflare Dashboard → Workers & Pages → Create application → Pages → Connect to Git (or Import an existing Git repository):
 
-If using GitHub's browser upload, navigate to the new repository, choose **Add file → Upload files**, and drop the contents of the extracted folder into the upload area; verify nested directories were preserved before committing. You can use GitHub Desktop as a graphical alternative.
+| Setting | Value |
+|---|---|
+| GitHub repo | `desert2223/horodetska-boho` |
+| Production branch | `main` |
+| Project name | `horodetska-boho` (if available) |
+| Framework preset | `None` |
+| Build command | `exit 0` |
+| Build output directory | `.` |
+| Root directory | repository root / default |
+| Environment variables | none |
 
-## Cloudflare Pages (only after photo / rights review)
+Select **Save and Deploy / Deploy**, then check the generated `*.pages.dev` URL. Pushing new commits to `main` automatically triggers subsequent deployments.
 
-- Create a **separate Pages project** (do not use the ResponseHarbor project).
-- Choose **Connect to Git** and authorize the `desert2223/horodetska-boho` repository.
-- Production branch `main`.
-- Framework preset: `None` (plain static site).
-- Build command: leave **empty**.
-- Build output directory: `.` (repository root).
-- No environment variables needed yet.
+### Preview indexing and access
 
-Every push to `main` can then redeploy the site automatically, subject to Cloudflare project settings. A private GitHub repo does **not** make the Cloudflare Pages URL private: treat any deployed Pages preview as publicly reachable. This preview has a `noindex` meta tag, `robots.txt`, and a Cloudflare `_headers` rule with `X-Robots-Tag`, which discourage indexing but **do not restrict access**. Use Cloudflare Access if genuine access control is needed.
+The project includes a `noindex` meta tag, a `robots.txt` file, and `_headers` with `X-Robots-Tag` intended to discourage indexing during the design-preview stage. **These do not hide the site:** `*.pages.dev` is publicly reachable unless access protection is separately configured. Remove preview indexing restrictions only when the commercial site is ready.
 
-## Prelaunch checklist
+## Before a commerce launch
 
-- [ ] Owner confirms brand name, founder biography, studio location and rights to photo assets.
-- [ ] Get photographer / model permissions, especially for editorial looks shot with other people.
-- [ ] Confirm prices, statuses, measurements, materials and care instructions.
-- [ ] Define contact email and inquiry delivery method, international shipping and return policy.
-- [ ] Replace placeholder legal/privacy sections with approved documents.
-- [ ] Test checkout or enquiry solution if commerce is enabled later.
-- [ ] Set up analytics only after appropriate consent configuration.
-- [ ] Remove `noindex`, `_headers` robots directive and `robots.txt` disallow when officially launching.
-
-Do not publish as an operational commerce website until these items are complete.
+Confirm product availability, descriptions, prices, measurements and materials, consumer terms (delivery, returns), the contact email, functional enquiry processing / payment arrangements and privacy / cookie compliance. The current prototype is not a live online shop.
