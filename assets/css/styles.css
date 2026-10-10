@@ -44,3 +44,24 @@
 .analytics-consent-actions button:focus-visible,.analytics-prefs-link:focus-visible{outline:2px solid #826246;outline-offset:3px}
 .analytics-prefs-link{color:inherit;text-decoration:underline;text-underline-offset:3px;font-size:11px}
 @media(max-width:600px){.analytics-consent-banner{bottom:10px;flex-direction:column;align-items:stretch;padding:18px;gap:14px}.analytics-consent-actions{display:grid;grid-template-columns:1fr 1fr}.analytics-consent-actions button{padding:13px 6px}}
+
+/* Nice · France · December 2023 — featured runway collection */
+.nice-feature-section{padding-top:16px}
+.nice-feature{display:grid;grid-template-columns:minmax(0,.94fr) minmax(0,1.06fr);min-height:530px;background:#eee7dc}
+.nice-feature-photo{display:block;overflow:hidden;min-height:530px;background:#cfc2b5}
+.nice-feature-photo img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 24%;transition:transform .45s ease}
+.nice-feature-photo:hover img{transform:scale(1.025)}
+.nice-feature-copy{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;padding:8% 11%}
+.nice-feature-copy h2{font-size:clamp(55px,5.3vw,89px);line-height:1.05;margin:26px 0 10px}
+.nice-feature-date{font-size:11px;letter-spacing:.24em;margin:0 0 23px;color:#72675d}
+.nice-feature-copy .copy{max-width:390px;margin-bottom:28px}
+.nice-collection-layout{display:grid;grid-template-columns:minmax(0,1.16fr) minmax(0,.84fr);gap:8%;align-items:start}
+.nice-collection-figure{margin:0}
+.nice-collection-figure img{display:block;width:100%;height:auto;max-height:950px;object-fit:contain;background:#e6ded4}
+.nice-collection-figure figcaption{font-size:10px;letter-spacing:.09em;color:#766e66;line-height:1.7;padding:15px 0}
+.nice-collection-info{padding-top:40px;position:sticky;top:30px}
+.nice-collection-info h2{font-size:clamp(49px,5vw,78px);line-height:1.06;margin:20px 0 30px}
+.nice-collection-info .copy{margin-bottom:22px}
+.nice-disclaimer{font-size:11px;line-height:1.7;color:#736b65;margin:36px 0 0;max-width:340px}
+@media(max-width:850px){.nice-feature{grid-template-columns:1fr}.nice-feature-photo{min-height:480px;height:60vw}.nice-feature-copy{padding:45px 7% 55px}.nice-collection-layout{grid-template-columns:1fr}.nice-collection-info{position:static;padding:8px 0}}
+@media(max-width:560px){.nice-feature-photo{height:117vw;min-height:0}.nice-feature-copy h2{font-size:54px}.nice-feature-copy{padding:38px 24px 45px}.nice-feature-section{padding-top:0}.nice-collection-info h2{font-size:58px}}
