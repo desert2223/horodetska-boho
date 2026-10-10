@@ -85,3 +85,25 @@
 
 /* Curated design galleries — archive and designer story */
 .collection-lookbook-heading{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-bottom:24px}.archive-look-link{display:block;text-decoration:none}.archive-look-link img{transition:filter .25s ease,transform .35s ease}.archive-look-link:hover img{filter:brightness(1.06)}.archive-look-link:hover b{text-decoration:underline;text-underline-offset:4px}.story-portrait-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:26px 20px}.story-portrait-card{margin:0;min-width:0}.story-portrait-card img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center top;background:#e8e2d7}.story-portrait-card figcaption{padding-top:13px;color:var(--muted);font-size:11px;line-height:1.7;letter-spacing:.03em}.story-portrait-section .section-heading p{max-width:450px}@media(max-width:850px){.story-portrait-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:560px){.collection-lookbook-heading{align-items:flex-start;flex-direction:column}.story-portrait-grid{gap:22px 14px}.story-portrait-card figcaption{font-size:10px}}
+
+/* Keep the Enquiries nav button aligned and visually unchanged on hover, focus, and active pages. */
+.nav-link.nav-cta,
+.nav-link.nav-cta.active,
+.nav-link.nav-cta:hover,
+.nav-link.nav-cta:focus,
+.nav-link.nav-cta:focus-visible,
+.nav-link.nav-cta:active {
+  box-sizing:border-box;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:13px 19px;
+  border:1px solid var(--ink);
+  border-radius:0;
+  background:transparent;
+  color:var(--ink);
+  text-align:center;
+  text-decoration:none;
+  transform:none;
+}
+.nav-link.nav-cta:focus-visible {outline:2px solid var(--ink);outline-offset:3px;}
